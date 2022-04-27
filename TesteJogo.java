@@ -5,6 +5,10 @@ public class TesteJogo {
 
     public static void main(String[]args) {
 
+        // Vetores e matrizes criadas para exemplificação do funcionamento da função
+        // tes1 = perguntas; test2 = respostas; cert = respostas corretas.
+        // Valores INT do lado de fora do laço para melhor funcionamento do laço neste caso.
+
         String tes1 [] = {"Quanto e 1+1?", "Quanto e 1+2?", "Quanto e 1+3?"};
         String test2[][] = {{"02", "01", "11", "15"},
                             {"03", "10", "33", "10"},
@@ -85,8 +89,8 @@ public class TesteJogo {
 
         rpessoa = resp[num][resposta-1];
 
-        return rpessoa == ce;
 
+        return rpessoa == ce;
 
     }
 
