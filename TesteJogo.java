@@ -18,6 +18,9 @@ public class TesteJogo {
         int certo = 0;
         int errado = 0;
 
+        // Laço para contabilizar respostas corretas e incorretas.
+        // Laço opcional
+
         do {
             
             boolean d = certoErrado(tes1, test2, cert, num);
@@ -33,17 +36,16 @@ public class TesteJogo {
         
         } while ( num != col );
     
-        
-    
-
     }
+
+    // Função que define as perguntas e as respostas necessárias para utilização
+    // FUNÇÃO PRINCIPAL no caso do jogo de RPG
+    // Não há retorno, não há necessidade de guardar em variável ao utilizar
 
     public static void perguntasRespostas (String perg[], String resp[][], int num) {
         
         System.out.println(perg[num]);
-
         int linha = resp[num].length;
-        
         
             for ( int j = 0; j < linha; j++){
                 System.out.println((j + 1) + ". " + resp[num][j]);
@@ -51,19 +53,24 @@ public class TesteJogo {
         
     }
 
+    // Método que define se uma questão está certa ou errada.
+    // MÉTODO OPCIONAL para o jogo
+    // Retorno booleano 
+
     public static boolean certoErrado (String perg[], String resp[][], String rcert[], int num) {
 
         Scanner sc = new Scanner(System.in);
         int linha = resp[num].length;
         String ce = rcert[num];
 
-
-
+        // Método chama o método "perguntas e respostas" para a verificação
         perguntasRespostas(perg, resp, num);
+
         String rpessoa = "";
         int resposta = 0;
         int volta = 0;
 
+        // Laço utilizado para verificação de resposta 
         do {
 
             if (volta > 0) 
