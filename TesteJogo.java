@@ -15,10 +15,10 @@ public class TesteJogo {
         int num = 0;
         int col = test2.length;
 
-        do {
+        int certo = 0;
+        int errado = 0;
 
-            int certo = 0;
-            int errado = 0;
+        do {
             
             boolean d = certoErrado(tes1, test2, cert, num);
              if (d == true)
@@ -43,12 +43,12 @@ public class TesteJogo {
         System.out.println(perg[num]);
 
         int linha = resp[num].length;
-
-        for (int i = 0; i < num; i++) {
+        
+        
             for ( int j = 0; j < linha; j++){
-                System.out.println((j + 1) + ". " + resp[i][j]);
+                System.out.println((j + 1) + ". " + resp[num][j]);
             }
-        }
+        
     }
 
     public static boolean certoErrado (String perg[], String resp[][], String rcert[], int num) {
@@ -60,13 +60,27 @@ public class TesteJogo {
 
 
         perguntasRespostas(perg, resp, num);
-        System.out.println("Escolha sua resposta de 1 a " + linha);
-        int resposta = sc.nextInt();
-        String rpessoa = resp[num][resposta-1];
+        String rpessoa = "";
+        int resposta = 0;
+        int volta = 0;
 
-        sc.close();
+        do {
+
+            if (volta > 0) 
+                System.out.println("A resposta que voce tentou colocar nao existe. Tente novamente.");
+
+        System.out.print("Escolha sua resposta de 1 a " + linha + ": ");
+        resposta = sc.nextInt();
+        
+        volta++;
+
+        } while ( resposta > resp[num].length );
+
+        rpessoa = resp[num][resposta-1];
 
         return rpessoa == ce;
+
+
     }
 
 
